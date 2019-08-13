@@ -11,7 +11,9 @@ from keras.preprocessing.image import ImageDataGenerator
 import numpy as np
 import matplotlib.pyplot as plt
 
-#------------------------------
+
+
+#--------------------------------
 #cpu - gpu configuration
 config = tf.ConfigProto( device_count = {'GPU': 1 , 'CPU': 56} ) #max: 1 gpu, 56 cpu
 sess = tf.Session(config=config) 
@@ -59,7 +61,7 @@ for i in range(1,num_of_instances):
     except:
         print("",end="")
 
-#------------------------------
+#--------------------------------
 #data transformation for train and test sets
 x_train = np.array(x_train, 'float32')
 y_train = np.array(y_train, 'float32')
