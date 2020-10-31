@@ -79,7 +79,7 @@ x_test = x_test.astype('float32')
 print(x_train.shape[0], 'train samples')
 print(x_test.shape[0], 'test samples')
 #------------------------------
-#construct CNN structure
+#construct CNN structure with special emphasis on downward trickling of images
 model = Sequential()
 
 #1st convolution layer
@@ -103,7 +103,7 @@ model.add(Dropout(0.2))
 model.add(Dense(1024, activation='relu'))
 model.add(Dropout(0.2))
 
-model.add(Dense(num_classes, activation='softmax'))
+model.add(Dense(num_classes, activation='softmax')) #softmax makes sure that people do not freeze in image incase resolution is low
 #------------------------------
 #batch process
 gen = ImageDataGenerator()
